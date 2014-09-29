@@ -1,0 +1,50 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="css/default.css">
+  <title>蔵書管理</title>
+</head>
+<body>
+<h1>蔵書管理</h1>
+<h2>蔵書データの修正</h2>
+<p>このデータを修正します｜
+<a href="list">蔵書データの表示</a>｜
+<a href="/">メニュー画面に戻る</a></p>
+<hr>
+
+<table>
+  <tr>
+    <% @book_columns.each do |name| %>
+      <th><%= name %></th>
+    <% end %>
+  </tr>
+  <tr>
+    <td><%= @value.id %></td>
+    <td><%= @value.title %></td>
+    <td><%= @value.author %></td>
+    <td><%= @value.page %></td>
+    <td><%= @value.publish_date %></td>
+  </tr>
+</table>
+
+<hr>
+
+<form method="post" action="/editted">
+
+<table>
+    <th>項目名</th><th>修正データ</th>
+<% ['title','author','page','publish_date'].each do |name| %>
+  <tr>
+    <td><%= name %></td>
+    <td><input type="text" name="<%=name%>" size="60" /></td>
+  </tr>
+<% end %>
+
+</table>
+<input type="hidden" name="id" value="<%= @value.id%>" />
+<input type="submit" value="修正を実行" />
+</form>
+
+<hr>
+</body>
+</html>

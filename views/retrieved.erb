@@ -1,0 +1,31 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="css/default.css">
+  <title>蔵書管理</title>
+</head>
+<body>
+<h1>蔵書管理</h1>
+<h2>検索結果の表示</h2>
+<p>以下のデータがヒットしました｜
+<a href="/list">蔵書データの表示（検索の解除）</a>｜
+<a href="/">メニュー画面に戻る</a></p>
+<hr>
+
+<table>
+  <tr>
+<% ['id','title','author','page','publish_date'].each do |name| %>
+    <th><%= name %></th>
+<% end %>
+  </tr>
+  <tr>
+<% @result.each do |val|%>
+    <td><%= val %></td>
+<% end %>
+
+  </tr>
+</table>
+<hr>
+
+</body>
+</html>

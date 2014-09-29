@@ -1,0 +1,30 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="css/default.css">
+  <title>蔵書管理</title>
+</head>
+<body>
+<h1>蔵書管理</h1>
+<h2>蔵書データの検索</h2>
+<p>検索条件を入力してください｜
+<a href="/list">蔵書データの表示</a>｜
+<a href="/">メニュー画面に戻る</a></p>
+<hr>
+
+<form method="post" action="/retrieve_author">
+<table>
+  <tr>
+    <th>項目名</th><th>検索データ</th>
+  </tr>
+  <tr>
+    <td>author</td>
+    <td><input type="text" name="author" size="60" /></td>
+  </tr>
+</table>
+<input type="submit" value="検索を実行" />
+</form>
+
+<hr>
+</body>
+</html>

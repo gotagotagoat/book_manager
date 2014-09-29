@@ -1,3 +1,5 @@
+/.bundle
+/vender
 .DS_Store
-test.rb
-test.sqlite3
+.ruby-version
+.gitignore
