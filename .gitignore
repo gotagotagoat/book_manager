@@ -1,5 +1,4 @@
 /.bundle
-/vender
+/vendor
 .DS_Store
 .ruby-version
-.gitignore
