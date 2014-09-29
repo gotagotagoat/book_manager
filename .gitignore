@@ -1,4 +1,4 @@
-/.bundle
-/vendor
+.bundle/
+vendor/
 .DS_Store
 .ruby-version
