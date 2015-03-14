@@ -31,11 +31,6 @@ get '/' do
   erb :index
 end
 
-post '/' do
-  @name = params[:str]
-  erb :index
-end
-
 get '/list' do
   @book_columns = Book.column_names[0..4]
   @book_list = Book.all
@@ -100,11 +95,11 @@ get '/retrieve_title' do
 end
 
 post '/retrieve_title' do
-  @result = Book.where("title = ?", params[:title]).pluck(:id, :title, :author, :page, :publish_date)[0]
-  if @result == nil
-    erb :noresult
-  else
+  @results = Book.where("title LIKE ?", "%#{params[:title]}%")
+  if @results
     erb :retrieved
+  else
+    erb :noresult
   end
 end
 
@@ -113,11 +108,11 @@ get '/retrieve_author' do
 end
 
 post '/retrieve_author' do
-  @result = Book.where("author = ?", params[:author]).pluck(:id, :title, :author, :page, :publish_date)[0]
-  if @result == nil
-    erb :noresult
-  else
+  @results = Book.where("author LIKE ?", "%#{params[:author]}%")
+  if @results
     erb :retrieved
+  else
+    erb :noresult
   end
 end
 

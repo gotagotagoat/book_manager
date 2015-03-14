@@ -14,17 +14,21 @@
 
 <table>
   <tr>
-<% ['id','title','author','page','publish_date'].each do |name| %>
-    <th><%= name %></th>
-<% end %>
+  <% ['id','title','author','page','publish_date'].each do |label| %>
+    <th><%= label %></th>
+  <% end %>
   </tr>
-  <tr>
-<% @result.each do |val|%>
-    <td><%= val %></td>
-<% end %>
-
-  </tr>
+  <% @results.each do |result|%>
+    <tr>
+      <td><%= result.id %></td>
+      <td><%= result.title %></td>
+      <td><%= result.author %></td>
+      <td><%= result.page %></td>
+      <td><%= result.publish_date %></td>
+    </tr>
+  <% end %>
 </table>
+
 <hr>
 
 </body>
